@@ -1,0 +1,8 @@
+the Makefile is used to compile the main.
+the collect_result.sh is to collect the result of the main of all the .fna data.
+
+the result is deposited in the direction result/ 
+and the sort of the result_1, result_2 and so on is yield to the sort in the filelist.
+
+before run the collect_result.sh, you should make sure the .fna data file is in the same direction 
+with the collect_result.sh, and in the same direction there should be a subdirection result/
