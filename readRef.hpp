@@ -13,12 +13,14 @@ struct GenomeSeq{
 //	GenomeSeq(string s, long l, string t) : name(s), length(l), type(t) {}
 
 };
+bool myfunction(GenomeSeq gs1, GenomeSeq gs2);
+
 
 void readSeq(string filename, vector<string> &name, vector<long> &seqLength,long &totalLength, long &totalNum);
 
-void computeType(vector<GenomeSeq> &descr, vector <string> &name, vector<long> &seqLength, vector <long> &typeSeq);
+void computeType(vector<GenomeSeq> &descr, vector <string> &name, vector<long> &seqLength, vector <long> &typeSeqNum, vector<string> &typeName);
 
-void outputTypeNum(vector<long> typeSeq);
+void outputTypeNum(vector<long> typeSeqNum, vector<string> typeName);
 
 void outputSeqName(vector<GenomeSeq> descr);
 

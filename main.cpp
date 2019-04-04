@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
+#include <algorithm> //std::sort
 #include "readRef.hpp"
 
 using namespace std;
@@ -18,16 +19,28 @@ int main(int argc, char* argv[]){
 	
 	vector<string> name;
 	vector <long> seqLength;
-	long totalLength;
-	long totalNum;
-	vector <long> typeSeq;
+	long totalLength = 0;
+	long totalNum = 0;
+	vector <long> typeSeqNum;
+	typeSeqNum.push_back(0);
+	typeSeqNum.push_back(0);
+	typeSeqNum.push_back(0);
+	typeSeqNum.push_back(0);
+	vector <string> typeName;
+	typeName.push_back("NZ");
+	typeName.push_back("NC");
+	typeName.push_back("NG");
+	typeName.push_back("NR");
+	
 	vector <GenomeSeq> genome;
 
 	readSeq(filename, name, seqLength, totalLength, totalNum);
 
-	computeType(genome, name, seqLength, typeSeq);
+	computeType(genome, name, seqLength, typeSeqNum, typeName);
 
-	outputTypeNum(typeSeq);
+	std::sort(genome.begin(),genome.end(),myfunction);
+
+	outputTypeNum(typeSeqNum, typeName);
 	
 	outputSeqName(genome);
 
